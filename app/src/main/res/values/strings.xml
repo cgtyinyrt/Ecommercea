@@ -2,4 +2,14 @@
     <string name="app_name">Ecommercea</string>
     <string name="rightaddress">The Right Address\nFor Shopping\nAny Day</string>
     <string name="quality">It is now very easy to reach the\nbest quality among the\nproducts on the internet!</string>
+    <string name="let_s_login">Let\'s Login</string>
+    <string name="ecommercea">Ecommercea</string>
+    <string name="don_t_have_an_account_register">Don\'t have an account? Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
 </resources>
