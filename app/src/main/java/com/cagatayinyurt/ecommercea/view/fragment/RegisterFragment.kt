@@ -1,6 +1,7 @@
 package com.cagatayinyurt.ecommercea.view.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +14,8 @@ import com.cagatayinyurt.ecommercea.databinding.FragmentRegisterBinding
 import com.cagatayinyurt.ecommercea.util.Resource
 import com.cagatayinyurt.ecommercea.viewmodel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+
+private val TAG = "RegisterFragment"
 
 @AndroidEntryPoint
 class RegisterFragment : Fragment(R.layout.fragment_register) {
@@ -22,9 +24,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
     private val viewModel by viewModels<RegisterViewModel>()
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentRegisterBinding.inflate(inflater)
         return binding.root
@@ -45,20 +45,23 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             }
         }
 
-//        lifecycleScope.launchWhenStarted {
-////            viewModel.register.collect {
-////                when(it) {
-////                    is Resource.Loading -> {
-////                        binding.btnRegister.startAnimation()
-////                    }
-////                    is Resource.Success -> {
-////
-////                    }
-////                    is Resource.Error -> {
-////
-////                    }
-////                }
-////            }
-////        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.register.collect {
+                when (it) {
+                    is Resource.Loading -> {
+                        binding.btnRegister.startAnimation()
+                    }
+                    is Resource.Success -> {
+                        Log.d("test", it.data.toString())
+                        binding.btnRegister.revertAnimation()
+                    }
+                    is Resource.Error -> {
+                        Log.e(TAG, it.message.toString())
+                        binding.btnRegister.revertAnimation()
+                    }
+                    else -> Unit
+                }
+            }
+        }
     }
 }
