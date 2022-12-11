@@ -1,4 +1,4 @@
-package com.cagatayinyurt.viewmodel
+package com.cagatayinyurt.ecommercea.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.cagatayinyurt.ecommercea.data.User
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginRegisterViewModel @Inject constructor(
+class RegisterViewModel @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) : ViewModel() {
 

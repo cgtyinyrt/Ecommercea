@@ -122,7 +122,7 @@
             android:layout_marginTop="15dp"
             android:autofillHints="" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btnRegister"
             android:layout_width="0dp"
             android:layout_height="@dimen/mediumButtonHeight"
