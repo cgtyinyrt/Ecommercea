@@ -38,6 +38,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+    kapt {
+        correctErrorTypes true
+    }
 }
 
 dependencies {
@@ -69,8 +72,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
 
     // Dagger hilt
-    implementation "com.google.dagger:hilt-android:2.38.1"
-    kapt "com.google.dagger:hilt-compiler:2.38.1"
+    implementation "com.google.dagger:hilt-android:2.44.2"
+    kapt 'com.google.dagger:hilt-compiler:2.44.2'
 
     // Firebase
     implementation 'com.google.firebase:firebase-auth:21.1.0'

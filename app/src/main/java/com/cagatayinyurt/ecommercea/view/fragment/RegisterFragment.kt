@@ -13,11 +13,9 @@ import com.cagatayinyurt.ecommercea.data.User
 import com.cagatayinyurt.ecommercea.databinding.FragmentRegisterBinding
 import com.cagatayinyurt.ecommercea.util.Resource
 import com.cagatayinyurt.ecommercea.viewmodel.RegisterViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
 private val TAG = "RegisterFragment"
 
-@AndroidEntryPoint
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private lateinit var binding: FragmentRegisterBinding
