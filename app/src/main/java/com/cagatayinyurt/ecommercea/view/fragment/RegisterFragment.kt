@@ -11,8 +11,12 @@ import androidx.lifecycle.lifecycleScope
 import com.cagatayinyurt.ecommercea.R
 import com.cagatayinyurt.ecommercea.data.User
 import com.cagatayinyurt.ecommercea.databinding.FragmentRegisterBinding
+import com.cagatayinyurt.ecommercea.util.RegisterValidation
 import com.cagatayinyurt.ecommercea.util.Resource
 import com.cagatayinyurt.ecommercea.viewmodel.RegisterViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.withContext
 
 private val TAG = "RegisterFragment"
 
@@ -58,6 +62,27 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                         binding.btnRegister.revertAnimation()
                     }
                     else -> Unit
+                }
+            }
+        }
+
+        lifecycleScope.launchWhenCreated {
+            viewModel.validation.collect { validation ->
+                if (validation.email is RegisterValidation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.edEmailLogin.apply {
+                            requestFocus()
+                            error = validation.email.message
+                        }
+                    }
+                }
+                if (validation.password is RegisterValidation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.edPasswordLogin.apply {
+                            requestFocus()
+                            error = validation.password.message
+                        }
+                    }
                 }
             }
         }
