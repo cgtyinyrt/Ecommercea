@@ -3,8 +3,9 @@ package com.cagatayinyurt.ecommercea.viewmodel
 import androidx.lifecycle.ViewModel
 import com.cagatayinyurt.ecommercea.data.User
 import com.cagatayinyurt.ecommercea.util.*
+import com.cagatayinyurt.ecommercea.util.Constants.USER_COLLECTION
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
@@ -15,11 +16,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class RegisterViewModel @Inject constructor(
-    private val firebaseAuth: FirebaseAuth
+    private val firebaseAuth: FirebaseAuth,
+    private val firestore: FirebaseFirestore
 ) : ViewModel() {
 
-    private val _register = MutableStateFlow<Resource<FirebaseUser>>(Resource.Unspecified())
-    val register : Flow<Resource<FirebaseUser>> = _register
+    private val _register = MutableStateFlow<Resource<User>>(Resource.Unspecified())
+    val register: Flow<Resource<User>> = _register
 
     private val _validation = Channel<RegisterFieldState>()
     val validation = _validation.receiveAsFlow()
@@ -32,7 +34,8 @@ class RegisterViewModel @Inject constructor(
             firebaseAuth.createUserWithEmailAndPassword(user.email, password)
                 .addOnSuccessListener {
                     it.user?.let {
-                        _register.value = Resource.Success(it)
+                        saveUserInfo(it.uid, user)
+//                        _register.value = Resource.Success(it)
                     }
                 }.addOnFailureListener {
                     _register.value = Resource.Error(it.message.toString())
@@ -47,7 +50,7 @@ class RegisterViewModel @Inject constructor(
         }
     }
 
-    private fun checkValidation(user: User, password: String) : Boolean {
+    private fun checkValidation(user: User, password: String): Boolean {
         val emailValidation = validateEmail(user.email)
         val passwordValidation = validatePassword(password)
         val shouldRegister = emailValidation is RegisterValidation.Success &&
@@ -56,5 +59,16 @@ class RegisterViewModel @Inject constructor(
         return shouldRegister
 //        return emailValidation is RegisterValidation.Success &&
 //                passwordValidation is RegisterValidation.Success
+    }
+
+    private fun saveUserInfo(userUid: String, user: User) {
+        firestore.collection(USER_COLLECTION)
+            .document(userUid)
+            .set(user)
+            .addOnSuccessListener {
+                _register.value = Resource.Success(user)
+            }.addOnFailureListener {
+                _register.value = Resource.Error(it.message.toString())
+            }
     }
 }

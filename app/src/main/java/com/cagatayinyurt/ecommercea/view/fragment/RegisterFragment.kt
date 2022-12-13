@@ -15,7 +15,6 @@ import com.cagatayinyurt.ecommercea.util.RegisterValidation
 import com.cagatayinyurt.ecommercea.util.Resource
 import com.cagatayinyurt.ecommercea.viewmodel.RegisterViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.withContext
 
 private val TAG = "RegisterFragment"
