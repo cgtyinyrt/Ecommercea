@@ -58,7 +58,7 @@
             android:textSize="35sp"/>
 
         <TextView
-            android:id="@+id/tvDontHaveAccount"
+            android:id="@+id/tvDoYouHaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/h2"
@@ -76,7 +76,7 @@
             android:layout_height="@dimen/editTextHeight"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
             app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
-            app:layout_constraintTop_toBottomOf="@id/tvDontHaveAccount"
+            app:layout_constraintTop_toBottomOf="@id/tvDoYouHaveAccount"
             style="@style/editText"
             android:hint="@string/first_name"
             android:inputType="textEmailAddress"
