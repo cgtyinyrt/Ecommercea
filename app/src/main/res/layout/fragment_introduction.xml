@@ -75,7 +75,7 @@
         android:text="@string/rightaddress"
         android:textAlignment="center"
         android:gravity="center"
-        android:textSize="35sp"/>
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/tvQuality"

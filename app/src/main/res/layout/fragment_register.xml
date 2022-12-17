@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/h3"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             app:drawableStartCompat="@drawable/ic_kleine_shape"
             android:drawablePadding="6dp"
             android:textStyle="bold"
@@ -47,7 +47,7 @@
             android:id="@+id/tvLetsLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             style="@style/h4"
             app:layout_constraintTop_toBottomOf="@id/tvAppName"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
             android:textAlignment="center"
             android:gravity="center"
             android:text="@string/do_you_have_an_account_login"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="10dp"/>
 
         <EditText
             android:id="@+id/edFirstName"
