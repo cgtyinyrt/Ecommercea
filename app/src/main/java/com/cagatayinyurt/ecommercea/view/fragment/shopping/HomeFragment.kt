@@ -53,5 +53,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
                 5 -> tab.text = "Furniture"
             }
         }.attach()
+
+        binding.viewPagerHome.isUserInputEnabled = false
     }
 }

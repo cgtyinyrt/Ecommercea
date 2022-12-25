@@ -20,6 +20,9 @@ class SpecialProductsAdapter :
                 Glide.with(itemView).load(product.images[0]).into(imageSpecialRvItem)
                 tvSpecialProductName.text = product.name
                 tvSpecialProductPrize.text = product.price.toString()
+
+                tvSpecialProductPrize.text = "$ ${product.price}"
+                tvSpecialProductName.text = product.name
             }
         }
     }
