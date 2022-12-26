@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/g_blue_gray200">
 
     <LinearLayout
         android:id="@+id/llHomeHeader"
@@ -88,7 +89,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
-        app:tabIndicator="@null"/>
+        app:tabIndicator="@null"
+        android:background="@color/g_blue_gray200"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerHome"

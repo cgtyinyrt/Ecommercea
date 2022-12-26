@@ -14,8 +14,8 @@ import com.cagatayinyurt.ecommercea.databinding.FragmentBaseCategoryBinding
 open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
 
     private lateinit var binding: FragmentBaseCategoryBinding
-    private lateinit var offerAdapter: BestProductAdapter
-    private lateinit var bestProductsAdapter: BestProductAdapter
+    protected val offerAdapter: BestProductAdapter by lazy { BestProductAdapter() }
+    protected val bestProductsAdapter: BestProductAdapter by lazy { BestProductAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,10 +31,34 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
 
         setupOfferRecyclerView()
         setupBestProductsRecyclerView()
+
+//        binding.rvOffer.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+//            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+//                super.onScrolled(recyclerView, dx, dy)
+//
+//                if (!recyclerView.canScrollHorizontally(1) && dx != 0) {
+//                    //onOfferPagingRequest()
+//                }
+//            }
+//        })
+
+//        binding.nestedScrollBaseCategory
+//            .setOnScrollChangeListener(
+//                NestedScrollView.OnScrollChangeListener{ v, _, scrollY, _, _ ->
+//            if (v.getChildAt(0).bottom <= v.height + scrollY) {
+//                //onBestProductsPagingRequest()
+//            }
+//        })
     }
 
+//    open fun onOfferPagingRequest() {
+//    }
+//
+//    open fun onBestProductsPagingRequest() {
+//    }
+
     private fun setupBestProductsRecyclerView() {
-        bestProductsAdapter = BestProductAdapter()
+        //bestProductsAdapter = BestProductAdapter()
         binding.rvBestProducts.apply {
             layoutManager = GridLayoutManager(
                 requireContext(), 2, GridLayoutManager.VERTICAL, false
@@ -44,8 +68,8 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
     }
 
     private fun setupOfferRecyclerView() {
-        offerAdapter = BestProductAdapter()
-        binding.rvBestProducts.apply {
+        //offerAdapter = BestProductAdapter()
+        binding.rvOffer.apply {
             layoutManager = LinearLayoutManager(
                 requireContext(),
                 LinearLayoutManager.HORIZONTAL,
@@ -53,5 +77,21 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
             )
             adapter = offerAdapter
         }
+    }
+
+    fun showOfferLoading() {
+        binding.offerProductsProgressBar.visibility = View.VISIBLE
+    }
+
+    fun hideOfferLoading() {
+        binding.offerProductsProgressBar.visibility = View.GONE
+    }
+
+    fun showBestProductsLoading() {
+        binding.bestProductsProgressBar.visibility = View.VISIBLE
+    }
+
+    fun hideBestProductsLoading() {
+        binding.bestProductsProgressBar.visibility = View.GONE
     }
 }

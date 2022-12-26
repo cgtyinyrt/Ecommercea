@@ -32,8 +32,8 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
             ChairFragment(),
             CupboardFragment(),
             TableFragment(),
-            FurnitureFragment(),
-            AccessoriesFragment()
+            AccessoriesFragment(),
+            FurnitureFragment()
         )
 
         val viewPager2Adapter = HomeViewPagerAdapter(
