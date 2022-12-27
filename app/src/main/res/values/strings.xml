@@ -27,4 +27,6 @@
     <string name="search_now">Search Now</string>
     <string name="best_deals">Best Deals</string>
     <string name="best_products">Best Products</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="s">S</string>
 </resources>
