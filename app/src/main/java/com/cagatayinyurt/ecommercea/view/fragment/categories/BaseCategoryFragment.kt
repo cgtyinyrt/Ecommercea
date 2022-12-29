@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cagatayinyurt.ecommercea.R
 import com.cagatayinyurt.ecommercea.adapter.BestProductAdapter
 import com.cagatayinyurt.ecommercea.databinding.FragmentBaseCategoryBinding
+import com.cagatayinyurt.ecommercea.util.showBottomNav
 
 open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
 
@@ -31,6 +33,16 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
 
         setupOfferRecyclerView()
         setupBestProductsRecyclerView()
+
+        bestProductsAdapter.onClick = {
+            val bundle = Bundle().apply { putParcelable("product", it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment, bundle)
+        }
+
+        offerAdapter.onClick = {
+            val bundle = Bundle().apply { putParcelable("product", it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment, bundle)
+        }
 
 //        binding.rvOffer.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 //            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -93,5 +105,10 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
 
     fun hideBestProductsLoading() {
         binding.bestProductsProgressBar.visibility = View.GONE
+    }
+
+    override fun onResume() {
+        super.onResume()
+        showBottomNav()
     }
 }
