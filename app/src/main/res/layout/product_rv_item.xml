@@ -22,7 +22,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="fitCenter"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/imgproductdesc" />
 
         <LinearLayout
             android:id="@+id/linear_product_name"
@@ -36,10 +37,10 @@
 
             <TextView
                 android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_light"
-                android:text="Chair"
+                android:text="@string/chair"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -53,7 +54,8 @@
                 android:layout_marginEnd="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_favorite"
-                app:tint="@color/g_blue_gray200" />
+                app:tint="@color/g_blue_gray200"
+                android:contentDescription="@string/favoritedesc" />
 
         </LinearLayout>
 
@@ -64,7 +66,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/sf_pro_display"
-            android:text="$1600"
+            android:text="@string/_1600"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +81,7 @@
             android:layout_marginTop="3dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/sf_pro_display"
-            android:text="$1600"
+            android:text="@string/_1600"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/blury_background"
         android:scaleType="centerCrop"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/blurrybackdesc" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -142,7 +142,7 @@
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
             app:layout_constraintTop_toBottomOf="@id/btnRegister"
             android:src="@drawable/facebook_login"
-            android:contentDescription="TODO" />
+            android:contentDescription="@string/facebooklogindesc" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -161,7 +161,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
             app:layout_constraintTop_toBottomOf="@id/btnRegister"
             android:src="@drawable/google_login"
-            android:contentDescription="TODO" />
+            android:contentDescription="@string/googlelogindesc" />
 
         <TextView
             android:layout_width="wrap_content"

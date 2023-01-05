@@ -1,5 +1,6 @@
 package com.cagatayinyurt.ecommercea.view.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.cagatayinyurt.ecommercea.data.User
 import com.cagatayinyurt.ecommercea.databinding.FragmentRegisterBinding
 import com.cagatayinyurt.ecommercea.util.RegisterValidation
 import com.cagatayinyurt.ecommercea.util.Resource
+import com.cagatayinyurt.ecommercea.view.activity.ShoppingActivity
 import com.cagatayinyurt.ecommercea.viewmodel.RegisterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -62,6 +64,10 @@ class RegisterFragment : Fragment() {
                     is Resource.Success -> {
                         Log.d("test", it.data.toString())
                         binding.btnRegister.revertAnimation()
+                        requireActivity().run{
+                            startActivity(Intent(this, ShoppingActivity::class.java))
+                            finish()
+                        }
                     }
                     is Resource.Error -> {
                         Log.e(TAG, it.message.toString())

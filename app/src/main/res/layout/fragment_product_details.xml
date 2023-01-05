@@ -33,7 +33,8 @@
                 android:layout_height="40dp"
                 android:src="@drawable/ic_close"
                 app:tint="@color/g_black"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:contentDescription="@string/imagebackdesc" />
 
         </androidx.cardview.widget.CardView>
 
@@ -56,7 +57,7 @@
                 android:layout_weight="1"
                 style="@style/h3"
                 android:textStyle="bold"
-                android:text="Product Name"/>
+                android:text="@string/product_name"/>
 
             <TextView
                 android:id="@+id/tvProductPrice"
@@ -64,7 +65,7 @@
                 android:layout_height="wrap_content"
                 style="@style/h3"
                 android:textColor="@color/g_gray700"
-                android:text="Price"/>
+                android:text="@string/price"/>
 
         </LinearLayout>
 
@@ -78,7 +79,7 @@
             app:layout_constraintStart_toStartOf="@id/linearTitle"
             android:textSize="12sp"
             android:textStyle="bold"
-            android:text="Price"/>
+            android:text="@string/price"/>
 
         <View
             android:id="@+id/viewLine"
@@ -100,7 +101,8 @@
             app:layout_constraintStart_toStartOf="@id/viewLine"
             app:layout_constraintEnd_toEndOf="@id/viewLine"
             app:layout_constraintTop_toBottomOf="@id/viewLine"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:baselineAligned="false">
             
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -114,7 +116,7 @@
                     android:layout_height="wrap_content"
                     style="@style/h3"
                     android:textColor="@color/black"
-                    android:text="Color"/>
+                    android:text="@string/color"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rvColors"
@@ -135,7 +137,7 @@
                     android:layout_height="wrap_content"
                     style="@style/h3"
                     android:textColor="@color/black"
-                    android:text="Size"/>
+                    android:text="@string/size"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_sizes"

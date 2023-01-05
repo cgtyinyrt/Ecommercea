@@ -4,7 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,11 +15,15 @@ import com.cagatayinyurt.ecommercea.R
 import com.cagatayinyurt.ecommercea.adapter.ColorsAdapter
 import com.cagatayinyurt.ecommercea.adapter.SizesAdapter
 import com.cagatayinyurt.ecommercea.adapter.ViewPager2ImagesAdapter
+import com.cagatayinyurt.ecommercea.data.CartProduct
 import com.cagatayinyurt.ecommercea.databinding.FragmentProductDetailsBinding
+import com.cagatayinyurt.ecommercea.util.Resource
 import com.cagatayinyurt.ecommercea.util.hideBottomNav
-import com.cagatayinyurt.ecommercea.view.activity.ShoppingActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.cagatayinyurt.ecommercea.viewmodel.DetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 
+@AndroidEntryPoint
 class ProductDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentProductDetailsBinding
@@ -24,6 +31,9 @@ class ProductDetailsFragment : Fragment() {
     private val sizesAdapter by lazy { SizesAdapter() }
     private val colorsAdapter by lazy { ColorsAdapter() }
     private val args by navArgs<ProductDetailsFragmentArgs>()
+    private var selectedColor: Int? = null
+    private var selectedSize: String? = null
+    private val viewModel by viewModels<DetailsViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,6 +53,37 @@ class ProductDetailsFragment : Fragment() {
         setupSizesRv()
         setupColorsRv()
         setupViewPager2Rv()
+
+        sizesAdapter.onItemClick = {
+            selectedSize = it
+        }
+
+        colorsAdapter.onItemClick = {
+            selectedColor = it
+        }
+
+        binding.btnAddToCart.setOnClickListener {
+            viewModel.addUpdateProductInCart(CartProduct(product, 1, selectedColor, selectedSize))
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.addToCart.collectLatest {
+                when (it) {
+                    is Resource.Loading -> {
+                        binding.btnAddToCart.startAnimation()
+                    }
+                    is Resource.Success -> {
+                        binding.btnAddToCart.revertAnimation()
+                        Toast.makeText(requireContext(), "Product added successfully", Toast.LENGTH_LONG).show()
+                    }
+                    is Resource.Error -> {
+                        binding.btnAddToCart.stopAnimation()
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
+                    }
+                    else -> Unit
+                }
+            }
+        }
 
         binding.imageBack.setOnClickListener {
             findNavController().navigateUp()
