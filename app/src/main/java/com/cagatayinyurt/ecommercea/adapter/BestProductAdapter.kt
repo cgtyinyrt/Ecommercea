@@ -10,28 +10,28 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cagatayinyurt.ecommercea.data.Product
 import com.cagatayinyurt.ecommercea.databinding.ProductRvItemBinding
+import com.cagatayinyurt.ecommercea.helper.getProductPrice
 
-class BestProductAdapter : RecyclerView.Adapter<BestProductAdapter.BestProductViewHolder>() {
+class BestProductAdapter :
+    RecyclerView.Adapter<BestProductAdapter.BestProductViewHolder>() {
 
     inner class BestProductViewHolder(
-        private val binding : ProductRvItemBinding) : RecyclerView.ViewHolder(binding.root) {
+        private val binding: ProductRvItemBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(product: Product) {
-                binding.apply {
-                    Glide.with(itemView).load(product.images[0]).into(imgProduct)
-                    product.offerPercentage?.let {
-                        val remainingPricePercentage = 1f - it
-                        val priceAfterOffer = remainingPricePercentage * product.price
-                        tvNewPrice.text = String.format("%.2f", priceAfterOffer)
-                        tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-                    }
-                    if (product.offerPercentage == null) {
-                        tvNewPrice.visibility = View.GONE
-                    }
-                    tvPrice.text = "$ ${product.price}"
-                    tvName.text = product.name
+        fun bind(product: Product) {
+            binding.apply {
+                val priceAfterOffer = product.offerPercentage.getProductPrice(product.price)
+                tvNewPrice.text = " ${String.format("%.2f", priceAfterOffer)}"
+                tvPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+                if (product.offerPercentage == null) {
+                    tvNewPrice.visibility = View.GONE
                 }
+                Glide.with(itemView).load(product.images[0]).into(imgProduct)
+                tvPrice.text = "$ ${product.price}"
+                tvName.text = product.name
             }
+        }
     }
 
     private val diffCallback = object : DiffUtil.ItemCallback<Product>() {

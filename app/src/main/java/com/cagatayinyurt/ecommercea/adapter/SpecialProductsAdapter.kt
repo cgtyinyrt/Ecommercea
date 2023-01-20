@@ -12,6 +12,8 @@ import com.cagatayinyurt.ecommercea.databinding.SpecialRvItemBinding
 class SpecialProductsAdapter :
     RecyclerView.Adapter<SpecialProductsAdapter.SpecialProductsViewHolder>() {
 
+    var onClick: ((Product) -> Unit)? = null
+
     inner class SpecialProductsViewHolder(private val binding: SpecialRvItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
@@ -59,6 +61,4 @@ class SpecialProductsAdapter :
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
-
-    var onClick: ((Product) -> Unit)? = null
 }
