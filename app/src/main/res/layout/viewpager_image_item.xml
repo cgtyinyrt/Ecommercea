@@ -6,6 +6,7 @@
     android:id="@+id/ImageProductDetails"
     android:scaleType="fitXY"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:layout_constraintTop_toTopOf="parent"
+    android:background="@color/kids_palette">
 
 </ImageView>

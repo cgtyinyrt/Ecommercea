@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/kids_palette">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineLeftTexture"
@@ -30,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.19" />
+        app:layout_constraintGuide_percent="0.10" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineEllipseBottom"
@@ -40,17 +41,6 @@
         app:layout_constraintGuide_percent="0.52" />
 
     <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="textureLeftDesc"
-        android:scaleType="centerCrop"
-        android:src="@drawable/texture_left"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineLeftTexture"
-        app:layout_constraintDimensionRatio="1:3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    
-    <ImageView
         android:id="@+id/ellipse"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -58,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="@id/guidelineEllipseRight"
         app:layout_constraintTop_toTopOf="@id/guidelineEllipseTop"
         app:layout_constraintBottom_toBottomOf="@id/guidelineEllipseBottom"
-        android:background="@drawable/ellipse"
+        android:background="@color/kids_palette"
         app:layout_constraintDimensionRatio="1:1"
         android:contentDescription="@string/ellipsedesc" />
 
@@ -90,14 +80,6 @@
         android:text="@string/quality"
         android:layout_marginTop="15dp"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/texture_right"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guidelineLeftTexture"
-        android:contentDescription="@string/textureright" />
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnStart"
         android:layout_width="@dimen/smallButtonWidth"
@@ -107,6 +89,7 @@
         app:layout_constraintStart_toStartOf="@id/tvQuality"
         app:layout_constraintEnd_toEndOf="@id/tvQuality"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/start" />
+        android:text="@string/start"
+        android:textColor="@color/black"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

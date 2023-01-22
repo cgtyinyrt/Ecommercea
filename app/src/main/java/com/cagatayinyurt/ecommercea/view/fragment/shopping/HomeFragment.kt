@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.cagatayinyurt.ecommercea.R
 import com.cagatayinyurt.ecommercea.adapter.HomeViewPagerAdapter
+import com.cagatayinyurt.ecommercea.data.CartProduct
 import com.cagatayinyurt.ecommercea.databinding.FragmentHomeBinding
 import com.cagatayinyurt.ecommercea.view.fragment.categories.*
 import com.google.android.material.tabs.TabLayoutMediator

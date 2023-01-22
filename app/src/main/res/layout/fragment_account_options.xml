@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/blury_background"
+        android:background="@color/kids_palette"
         android:scaleType="centerCrop"
         android:contentDescription="@string/blurrybackdesc" />
 
@@ -65,7 +65,8 @@
             app:layout_constraintStart_toStartOf="@id/tvQuality"
             app:layout_constraintEnd_toEndOf="@id/tvQuality"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="@string/register" />
+            android:text="@string/register"
+            android:textColor="@color/black"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLoginAccountOptions"

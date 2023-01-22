@@ -8,7 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/kids_palette">
 
         <View
             android:id="@+id/line"
@@ -28,7 +29,7 @@
             app:layout_constraintBottom_toTopOf="@id/line"
             app:layout_constraintStart_toStartOf="parent"
             android:scaleType="centerCrop"
-            android:src="@color/g_blue"/>
+            android:src="@color/maroon_palette"/>
 
         <TextView
             android:id="@+id/tvProductCartName"

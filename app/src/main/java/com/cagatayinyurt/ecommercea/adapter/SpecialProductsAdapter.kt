@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.cagatayinyurt.ecommercea.data.CartProduct
 import com.cagatayinyurt.ecommercea.data.Product
 import com.cagatayinyurt.ecommercea.databinding.SpecialRvItemBinding
 
