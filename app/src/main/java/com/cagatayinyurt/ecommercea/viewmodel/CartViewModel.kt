@@ -81,6 +81,7 @@ class CartViewModel @Inject constructor(
         quantityChanging: FirebaseCommon.QuantityChanging
     ) {
         val index = cartProducts.value.data?.indexOf(cartProduct)
+
         if (index != null && index != -1) {
             val documentId = cardProductDocuments[index].id
             when (quantityChanging) {
@@ -102,17 +103,15 @@ class CartViewModel @Inject constructor(
 
     private fun increaseQuantity(documentId: String) {
         firebaseCommon.increaseQuantity(documentId) { result, exception ->
-            if (exception != null) {
+            if (exception != null)
                 viewModelScope.launch { _cartProducts.emit(Resource.Error(exception.message.toString())) }
-            }
         }
     }
 
     private fun decreaseQuantity(documentId: String) {
         firebaseCommon.decreaseQuantity(documentId) { result, exception ->
-            if (exception != null) {
+            if (exception != null)
                 viewModelScope.launch { _cartProducts.emit(Resource.Error(exception.message.toString())) }
-            }
         }
     }
 }

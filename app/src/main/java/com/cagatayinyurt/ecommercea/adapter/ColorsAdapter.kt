@@ -22,7 +22,6 @@ class ColorsAdapter : RecyclerView.Adapter<ColorsAdapter.ColorsViewHolder>() {
             val imageDrawable = ColorDrawable(color)
             binding.imageColor.setImageDrawable(imageDrawable)
             if (position == selectedPosition) {
-                // color is selected
                 binding.apply {
                     imageShadow.visibility = View.VISIBLE
                     imagePicked.visibility = View.VISIBLE
@@ -64,7 +63,6 @@ class ColorsAdapter : RecyclerView.Adapter<ColorsAdapter.ColorsViewHolder>() {
                 notifyItemChanged(selectedPosition)
             selectedPosition = holder.adapterPosition
             notifyItemChanged(selectedPosition)
-
             onItemClick?.invoke(color)
         }
     }

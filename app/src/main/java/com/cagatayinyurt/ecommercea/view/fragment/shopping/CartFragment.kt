@@ -25,7 +25,7 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
 
     private lateinit var binding : FragmentCartBinding
     private val cartAdapter by lazy { CartProductAdapter() }
-    private val viewModel  by activityViewModels<CartViewModel>()
+    private val viewModel by activityViewModels<CartViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,9 +50,7 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
         }
 
         cartAdapter.onProductClick = {
-            val bundle = Bundle().apply {
-                putParcelable("product", it.product)
-            }
+            val bundle = Bundle().apply { putParcelable("product", it.product) }
             findNavController().navigate(R.id.action_cartFragment_to_productDetailsFragment, bundle)
         }
 

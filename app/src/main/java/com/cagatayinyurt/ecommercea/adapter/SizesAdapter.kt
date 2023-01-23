@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.cagatayinyurt.ecommercea.databinding.SizeRvItemBinding
 
-class SizesAdapter : RecyclerView.Adapter<SizesAdapter.SizesViewHolder>() {
+class SizesAdapter
+    : RecyclerView.Adapter<SizesAdapter.SizesViewHolder>() {
 
     private var selectedPosition = -1
-    var onItemClick:((String) -> Unit)? = null
 
     inner class SizesViewHolder(
         val binding: SizeRvItemBinding
@@ -60,7 +60,6 @@ class SizesAdapter : RecyclerView.Adapter<SizesAdapter.SizesViewHolder>() {
                 notifyItemChanged(selectedPosition)
             selectedPosition = holder.adapterPosition
             notifyItemChanged(selectedPosition)
-
             onItemClick?.invoke(size)
         }
     }
@@ -68,4 +67,6 @@ class SizesAdapter : RecyclerView.Adapter<SizesAdapter.SizesViewHolder>() {
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onItemClick:((String) -> Unit)? = null
 }

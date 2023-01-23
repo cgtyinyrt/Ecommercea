@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.cagatayinyurt.ecommercea.databinding.ViewpagerImageItemBinding
 
-class ViewPager2ImagesAdapter : RecyclerView.Adapter<ViewPager2ImagesAdapter.ViewPager2ImagesViewHolder>() {
+class ViewPager2ImagesAdapter :
+    RecyclerView.Adapter<ViewPager2ImagesAdapter.ViewPager2ImagesViewHolder>() {
 
     inner class ViewPager2ImagesViewHolder(
         val binding: ViewpagerImageItemBinding

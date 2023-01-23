@@ -55,7 +55,7 @@ class FirebaseCommon(
         }
     }
 
-    enum class QuantityChanging() {
-        INCREASE, DECREASE
+    enum class QuantityChanging {
+        INCREASE,DECREASE
     }
 }

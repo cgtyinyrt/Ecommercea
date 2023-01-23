@@ -6,14 +6,11 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.cagatayinyurt.ecommercea.data.CartProduct
 import com.cagatayinyurt.ecommercea.data.Product
 import com.cagatayinyurt.ecommercea.databinding.SpecialRvItemBinding
 
 class SpecialProductsAdapter :
     RecyclerView.Adapter<SpecialProductsAdapter.SpecialProductsViewHolder>() {
-
-    var onClick: ((Product) -> Unit)? = null
 
     inner class SpecialProductsViewHolder(private val binding: SpecialRvItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -62,4 +59,6 @@ class SpecialProductsAdapter :
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onClick: ((Product) -> Unit)? = null
 }

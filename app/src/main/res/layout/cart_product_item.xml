@@ -61,7 +61,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvProductCartName"/>
 
         <ImageView
-            android:id="@+id/imagePlusIcon"
+            android:id="@+id/imagePlus"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginBottom="5dp"
@@ -70,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <ImageView
-            android:id="@+id/imageMinusIcon"
+            android:id="@+id/imageMinus"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginTop="5dp"
@@ -83,12 +83,12 @@
             android:id="@+id/tvCartProductQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_1"
+            android:text="1"
             android:textColor="@color/white"
-            app:layout_constraintTop_toBottomOf="@id/imageMinusIcon"
-            app:layout_constraintEnd_toEndOf="@id/imageMinusIcon"
-            app:layout_constraintBottom_toTopOf="@id/imagePlusIcon"
-            app:layout_constraintStart_toStartOf="@id/imagePlusIcon"/>
+            app:layout_constraintTop_toBottomOf="@id/imageMinus"
+            app:layout_constraintEnd_toEndOf="@id/imageMinus"
+            app:layout_constraintBottom_toTopOf="@id/imagePlus"
+            app:layout_constraintStart_toStartOf="@id/imagePlus"/>
         
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageCartProductColor"

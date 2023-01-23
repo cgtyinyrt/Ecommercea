@@ -12,29 +12,22 @@ import com.cagatayinyurt.ecommercea.data.CartProduct
 import com.cagatayinyurt.ecommercea.databinding.CartProductItemBinding
 import com.cagatayinyurt.ecommercea.helper.getProductPrice
 
-class CartProductAdapter : RecyclerView.Adapter<CartProductAdapter.CartProductsViewHolder>() {
+class CartProductAdapter: RecyclerView.Adapter<CartProductAdapter.CartProductsViewHolder>() {
 
-    var onProductClick: ((CartProduct) -> Unit)? = null
-    var onPlusClick: ((CartProduct) -> Unit)? = null
-    var onMinusClick: ((CartProduct) -> Unit)? = null
-
-    inner class CartProductsViewHolder(val binding: CartProductItemBinding) :
+    inner class CartProductsViewHolder( val binding: CartProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(cartProduct: CartProduct) {
             binding.apply {
                 Glide.with(itemView).load(cartProduct.product.images[0]).into(imageCartProduct)
                 tvProductCartName.text = cartProduct.product.name
-                tvProductCartPrice.text = cartProduct.product.price.toString()
+                tvCartProductQuantity.text = cartProduct.quantity.toString()
 
-                val priceAfterPercentage =
-                    cartProduct.product.offerPercentage.getProductPrice(cartProduct.product.price)
-                tvProductCartPrice.text = " ${String.format("%.2f", priceAfterPercentage)}"
+                val priceAfterPercentage = cartProduct.product.offerPercentage.getProductPrice(cartProduct.product.price)
+                tvProductCartPrice.text = "$ ${String.format("%.2f", priceAfterPercentage)}"
 
-                imageCartProductColor
-                    .setImageDrawable(ColorDrawable(cartProduct.selectedColor ?: Color.TRANSPARENT))
-                tvCartProductSize.text = cartProduct.selectedSize ?: ""
-                    .also { imageCartProductSize.setImageDrawable(ColorDrawable(Color.TRANSPARENT)) }
+                imageCartProductColor.setImageDrawable(ColorDrawable(cartProduct.selectedColor?: Color.TRANSPARENT))
+                tvCartProductSize.text = cartProduct.selectedSize?:"".also { imageCartProductSize.setImageDrawable(ColorDrawable(Color.TRANSPARENT)) }
             }
         }
     }
@@ -67,11 +60,11 @@ class CartProductAdapter : RecyclerView.Adapter<CartProductAdapter.CartProductsV
             onProductClick?.invoke(cartProduct)
         }
 
-        holder.binding.imagePlusIcon.setOnClickListener {
+        holder.binding.imagePlus.setOnClickListener {
             onPlusClick?.invoke(cartProduct)
         }
 
-        holder.binding.imageMinusIcon.setOnClickListener {
+        holder.binding.imageMinus.setOnClickListener {
             onMinusClick?.invoke(cartProduct)
         }
     }
@@ -79,4 +72,9 @@ class CartProductAdapter : RecyclerView.Adapter<CartProductAdapter.CartProductsV
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onProductClick: ((CartProduct) -> Unit)? = null
+    var onPlusClick: ((CartProduct) -> Unit)? = null
+    var onMinusClick: ((CartProduct) -> Unit)? = null
 }
+
