@@ -21,9 +21,9 @@ import com.cagatayinyurt.ecommercea.util.VerticalItemDecor
 import com.cagatayinyurt.ecommercea.viewmodel.CartViewModel
 import kotlinx.coroutines.flow.collectLatest
 
-class CartFragment: Fragment(R.layout.fragment_cart) {
+class CartFragment : Fragment(R.layout.fragment_cart) {
 
-    private lateinit var binding : FragmentCartBinding
+    private lateinit var binding: FragmentCartBinding
     private val cartAdapter by lazy { CartProductAdapter() }
     private val viewModel by activityViewModels<CartViewModel>()
 
@@ -39,19 +39,23 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupCartRecyclerView()
+        setupCartRv()
 
-        lifecycleScope.launchWhenCreated {
+        var totalPrice = 0f
+        lifecycleScope.launchWhenStarted {
             viewModel.productPrice.collectLatest { price ->
                 price?.let {
+                    totalPrice = it
                     binding.tvTotalPrice.text = "$ $price"
                 }
             }
         }
 
         cartAdapter.onProductClick = {
-            val bundle = Bundle().apply { putParcelable("product", it.product) }
-            findNavController().navigate(R.id.action_cartFragment_to_productDetailsFragment, bundle)
+            val b = Bundle().apply {
+                putParcelable("product", it.product)
+            }
+            findNavController().navigate(R.id.action_cartFragment_to_productDetailsFragment, b)
         }
 
         cartAdapter.onPlusClick = {
@@ -62,11 +66,18 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
             viewModel.changeQuantity(it, FirebaseCommon.QuantityChanging.DECREASE)
         }
 
+        binding.buttonCheckout.setOnClickListener {
+            val action = CartFragmentDirections
+                .actionCartFragmentToBillingFragment2(totalPrice,
+                    cartAdapter.differ.currentList.toTypedArray())
+            findNavController().navigate(action)
+        }
+
         lifecycleScope.launchWhenStarted {
             viewModel.deleteDialog.collectLatest {
                 val alertDialog = AlertDialog.Builder(requireContext()).apply {
-                    setTitle("Delete Item")
-                    setMessage("Are you sure delete this item?")
+                    setTitle("Delete item")
+                    setMessage("Do you want to delete this item from your cart?")
                     setNegativeButton("Cancel") { dialog, _ ->
                         dialog.dismiss()
                     }
@@ -80,7 +91,7 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
             }
         }
 
-        lifecycleScope.launchWhenCreated {
+        lifecycleScope.launchWhenStarted {
             viewModel.cartProducts.collectLatest {
                 when (it) {
                     is Resource.Loading -> {
@@ -123,19 +134,19 @@ class CartFragment: Fragment(R.layout.fragment_cart) {
         }
     }
 
-    private fun showEmptyCart() {
-        binding.apply {
-            layoutCartEmpty.visibility = View.VISIBLE
-        }
-    }
-
     private fun hideEmptyCart() {
         binding.apply {
             layoutCartEmpty.visibility = View.GONE
         }
     }
 
-    private fun setupCartRecyclerView() {
+    private fun showEmptyCart() {
+        binding.apply {
+            layoutCartEmpty.visibility = View.VISIBLE
+        }
+    }
+
+    private fun setupCartRv() {
         binding.rvCart.apply {
             layoutManager = LinearLayoutManager(
                 requireContext(),

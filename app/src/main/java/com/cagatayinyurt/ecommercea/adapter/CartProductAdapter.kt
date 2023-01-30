@@ -23,11 +23,16 @@ class CartProductAdapter: RecyclerView.Adapter<CartProductAdapter.CartProductsVi
                 tvProductCartName.text = cartProduct.product.name
                 tvCartProductQuantity.text = cartProduct.quantity.toString()
 
-                val priceAfterPercentage = cartProduct.product.offerPercentage.getProductPrice(cartProduct.product.price)
+                val priceAfterPercentage = cartProduct.product.offerPercentage.getProductPrice(
+                    cartProduct.product.price
+                )
                 tvProductCartPrice.text = "$ ${String.format("%.2f", priceAfterPercentage)}"
 
-                imageCartProductColor.setImageDrawable(ColorDrawable(cartProduct.selectedColor?: Color.TRANSPARENT))
-                tvCartProductSize.text = cartProduct.selectedSize?:"".also { imageCartProductSize.setImageDrawable(ColorDrawable(Color.TRANSPARENT)) }
+                imageCartProductColor.setImageDrawable(ColorDrawable(
+                    cartProduct.selectedColor?: Color.TRANSPARENT))
+                tvCartProductSize.text = cartProduct.selectedSize?:"".also {
+                    imageCartProductSize.setImageDrawable(ColorDrawable(Color.TRANSPARENT))
+                }
             }
         }
     }

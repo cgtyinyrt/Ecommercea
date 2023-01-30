@@ -29,6 +29,9 @@
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart">
         <action
+            android:id="@+id/action_cartFragment_to_billingFragment2"
+            app:destination="@id/billingFragment" />
+        <action
             android:id="@+id/action_cartFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
     </fragment>
@@ -55,4 +58,19 @@
         android:name="com.cagatayinyurt.ecommercea.view.fragment.shopping.AddressFragment"
         android:label="AddressFragment"
         tools:layout="@layout/fragment_address"/>
+    <fragment
+        android:id="@+id/billingFragment"
+        android:name="com.cagatayinyurt.ecommercea.view.fragment.shopping.BillingFragment"
+        android:label="BillingFragment"
+        tools:layout="@layout/fragment_billing">
+        <action
+            android:id="@+id/action_billingFragment_to_addressFragment"
+            app:destination="@id/addressFragment" />
+        <argument
+            android:name="totalPrice"
+            app:argType="float" />
+        <argument
+            android:name="products"
+            app:argType="com.cagatayinyurt.ecommercea.data.CartProduct[]" />
+    </fragment>
 </navigation>

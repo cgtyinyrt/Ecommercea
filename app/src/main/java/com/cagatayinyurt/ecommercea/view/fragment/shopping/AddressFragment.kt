@@ -13,8 +13,10 @@ import com.cagatayinyurt.ecommercea.data.Address
 import com.cagatayinyurt.ecommercea.databinding.FragmentAddressBinding
 import com.cagatayinyurt.ecommercea.util.Resource
 import com.cagatayinyurt.ecommercea.viewmodel.AddressViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
+@AndroidEntryPoint
 class AddressFragment : Fragment() {
 
     private lateinit var binding : FragmentAddressBinding

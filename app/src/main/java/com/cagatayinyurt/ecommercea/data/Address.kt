@@ -11,7 +11,7 @@ data class Address(
     val phone: String,
     val city: String,
     val state: String
-) : Parcelable {
+): Parcelable {
 
-    constructor(): this("", "", "", "", "", "")
+    constructor(): this("","","","","","")
 }
