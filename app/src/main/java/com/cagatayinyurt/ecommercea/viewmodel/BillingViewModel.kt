@@ -1,8 +1,8 @@
 package com.cagatayinyurt.ecommercea.viewmodel
 
-import android.location.Address
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.cagatayinyurt.ecommercea.data.Address
 import com.cagatayinyurt.ecommercea.util.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
