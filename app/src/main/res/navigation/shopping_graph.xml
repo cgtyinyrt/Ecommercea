@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/shopping_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/userAccFragment2">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -73,4 +73,9 @@
             android:name="products"
             app:argType="com.cagatayinyurt.ecommercea.data.CartProduct[]" />
     </fragment>
+    <fragment
+        android:id="@+id/userAccFragment2"
+        android:name="com.cagatayinyurt.ecommercea.view.fragment.settings.UserAccFragment"
+        android:label="UserAccFragment"
+        tools:layout="@layout/fragment_user_account"/>
 </navigation>

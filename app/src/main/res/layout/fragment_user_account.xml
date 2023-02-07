@@ -116,7 +116,7 @@
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/white_background"
-            android:editable="false"
+            android:editable="true"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
             android:hint="Email"
