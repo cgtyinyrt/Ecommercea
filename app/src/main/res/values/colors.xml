@@ -19,13 +19,15 @@
     <color name="g_search_and_icons">#FAFBFC</color>
     <color name="g_line">#E9EAEC</color>
     <color name="g_blue100">#B8D9FA</color>
-    <color name="g_red">#FF0000</color>
+    <color name="red">#FF0000</color>
     <color name="g_gray500">#969899</color>
-    <color name="g_orange_yellow">#F8BA00</color>
+    <color name="orange_yellow">#F8BA00</color>
 
     <color name="red_palette">#DC0000</color>
     <color name="maroon_palette">#850000</color>
     <color name="yellow_palette">#FFDB89</color>
     <color name="kids_palette">#FFF6C3</color>
     <color name="kids_palette2">#80FFF6C3</color>
+
+    <color name="green">#8015F406</color>
 </resources>
