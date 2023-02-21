@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/g_white"
+    android:backgroundTint="@color/c_white"
     app:cardElevation="0dp"
     app:cardCornerRadius="5dp"
     app:cardUseCompatPadding="true">
@@ -31,7 +31,8 @@
             app:layout_constraintBottom_toTopOf="@id/line"
             app:layout_constraintStart_toStartOf="parent"
             android:scaleType="centerCrop"
-            android:src="@color/kids_palette"/>
+            android:src="@color/kids_palette"
+            android:contentDescription="@string/contentimagecartproduct" />
 
         <TextView
             android:id="@+id/tvProductCartName"
@@ -40,7 +41,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins_light"
-            android:text="Chair"
+            android:text="@string/chair"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -53,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_light"
-            android:text="$50"
+            android:text="@string/_50"
             android:textColor="@color/white"
             android:textSize="11sp"
             android:textStyle="bold"
@@ -67,7 +68,8 @@
             android:layout_marginBottom="5dp"
             android:src="@drawable/ic_plus"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/contentimageplus" />
 
         <ImageView
             android:id="@+id/imageMinus"
@@ -77,13 +79,14 @@
             android:layout_marginEnd="1dp"
             android:src="@drawable/ic_minus"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/contentimageminus" />
 
         <TextView
             android:id="@+id/tvCartProductQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1"
+            android:text="@string/_1"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/imageMinus"
             app:layout_constraintEnd_toEndOf="@id/imageMinus"
@@ -95,7 +98,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginTop="5dp"
-            android:src="@color/g_blue"
+            android:src="@color/c_blue"
             app:layout_constraintStart_toStartOf="@id/tvProductCartPrice"
             app:layout_constraintTop_toBottomOf="@id/tvProductCartPrice"/>
 
@@ -104,7 +107,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginStart="5dp"
-            android:src="@color/g_blue_gray200"
+            android:src="@color/c_blue_gray200"
             app:layout_constraintStart_toEndOf="@id/imageCartProductColor"
             app:layout_constraintTop_toTopOf="@id/imageCartProductColor"/>
 

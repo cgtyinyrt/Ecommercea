@@ -31,7 +31,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/black" />
+                    app:tint="@color/black"
+                    android:contentDescription="@string/contentimagecloseorder" />
 
                 <TextView
                     android:id="@+id/tvOrderId"
@@ -41,7 +42,7 @@
                     android:fontFamily="@font/poppins_light"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:text="#1234567"
+                    android:text="@string/_1234567"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/imageCloseOrder"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -65,28 +66,28 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 app:sv_selectedCircleColor="@color/orange_yellow"
-                app:sv_selectedTextColor="@color/g_gray700"
+                app:sv_selectedTextColor="@color/c_gray700"
                 app:sv_stepLineWidth="3dp"
                 app:sv_stepPadding="4dp"
-                app:sv_nextTextColor="@color/g_gray700"
-                app:sv_nextStepLineColor="@color/g_gray700"
+                app:sv_nextTextColor="@color/c_gray700"
+                app:sv_nextStepLineColor="@color/c_gray700"
                 app:sv_doneCircleColor="@color/orange_yellow"
                 app:sv_doneStepLineColor="@color/orange_yellow"
                 app:sv_doneCircleRadius="14dp"
                 app:sv_selectedCircleRadius="14dp"
-                app:sv_selectedStepNumberColor="@color/g_blue_gray200"
+                app:sv_selectedStepNumberColor="@color/c_blue_gray200"
                 app:sv_stepViewStyle="@style/StepView"
-                app:sv_doneStepMarkColor="@color/g_blue_gray200"
+                app:sv_doneStepMarkColor="@color/c_blue_gray200"
                 app:sv_stepNumberTextSize="12sp"
                 app:sv_animationType="Line"
-                app:sv_doneTextColor="@color/g_gray700" />
+                app:sv_doneTextColor="@color/c_gray700" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tvShippingAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Address"
+            android:text="@string/address"
             android:fontFamily="@font/poppins_thin"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             android:textColor="@color/black"
@@ -109,21 +110,21 @@
                 android:id="@+id/tvFullName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Full Name"
+                android:text="@string/full_name"
                 android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tvAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Address"
+                android:text="@string/address"
                 android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/tvPhoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phone"
+                android:text="@string/phone"
                 android:textSize="13sp" />
 
         </LinearLayout>
@@ -133,17 +134,18 @@
             android:layout_width="0dp"
             android:layout_height="1sp"
             android:layout_marginTop="15dp"
-            android:background="@color/g_blue_gray200"
+            android:background="@color/c_blue_gray200"
             app:layout_constraintTop_toBottomOf="@id/linearAddress"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
-            android:backgroundTint="@color/g_blue_gray200" />
+            android:backgroundTint="@color/c_blue_gray200"
+            tools:ignore="SmallSp" />
 
         <TextView
             android:id="@+id/tvProducts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Products"
+            android:text="@string/products"
             android:fontFamily="@font/poppins_thin"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             android:textColor="@color/black"
@@ -179,7 +181,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Total"
+                android:text="@string/total"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/sf_pro_display"

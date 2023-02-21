@@ -1,5 +1,6 @@
 package com.cagatayinyurt.ecommercea.adapter
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ class BillingProductsAdapter :
     inner class BillingProductsViewHolder(val binding: BillingProductsRvItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(billingProduct: CartProduct) {
             binding.apply {
                 Glide.with(itemView).load(billingProduct.product.images[0]).into(imageCartProduct)

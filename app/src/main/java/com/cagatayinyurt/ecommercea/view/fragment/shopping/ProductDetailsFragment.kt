@@ -1,5 +1,6 @@
 package com.cagatayinyurt.ecommercea.view.fragment.shopping
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.cagatayinyurt.ecommercea.R
 import com.cagatayinyurt.ecommercea.adapter.ColorsAdapter
 import com.cagatayinyurt.ecommercea.adapter.SizesAdapter
 import com.cagatayinyurt.ecommercea.adapter.ViewPager2ImagesAdapter
@@ -45,6 +45,7 @@ class ProductDetailsFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

@@ -20,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:indeterminateTint="@color/g_gray700"
+            android:indeterminateTint="@color/c_gray700"
             android:visibility="gone"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -83,14 +83,15 @@
                     app:layout_constraintEnd_toEndOf="@id/constraintProfile"
                     app:layout_constraintTop_toTopOf="@id/tvUserName"
                     app:layout_constraintBottom_toBottomOf="@id/tv_edit_personal_details"
-                    app:tint="@color/g_blue_gray200" />
+                    app:tint="@color/c_blue_gray200"
+                    android:contentDescription="contentArrow" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/tvOrders"
                 style="@style/MediumTextViewThin"
-                android:textColor="@color/g_gray700"
+                android:textColor="@color/c_gray700"
                 android:textStyle="normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,7 +123,8 @@
                         android:src="@drawable/ic_all_orders"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/settings_items_background"
-                        app:tint="@color/white" />
+                        app:tint="@color/white"
+                        android:contentDescription="contentIcAllOrders" />
 
                     <TextView
                         android:id="@+id/tvAllOrders"
@@ -131,7 +133,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="All orders"
-                        android:textColor="@color/g_gray700"
+                        android:textColor="@color/c_gray700"
                         android:textStyle="bold"
                         android:layout_marginStart="15dp"
                         android:layout_gravity="center_vertical"/>
@@ -140,8 +142,9 @@
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200"
-                        android:layout_gravity="center_vertical"/>
+                        app:tint="@color/c_blue_gray200"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="contentIcArrow" />
 
                 </LinearLayout>
 
@@ -158,8 +161,9 @@
                         android:src="@drawable/ic_search"
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/settings_items_background"
-                        android:backgroundTint="@color/g_gray700"
-                        app:tint="@color/white" />
+                        android:backgroundTint="@color/c_gray700"
+                        app:tint="@color/white"
+                        android:contentDescription="@string/contenticsearch" />
 
                     <TextView
                         android:id="@+id/tvTrackOrders"
@@ -168,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Track Orders"
-                        android:textColor="@color/g_gray700"
+                        android:textColor="@color/c_gray700"
                         android:textStyle="bold"
                         android:layout_marginStart="15dp"
                         android:layout_gravity="center_vertical"/>
@@ -177,8 +181,9 @@
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200"
-                        android:layout_gravity="center_vertical"/>
+                        app:tint="@color/c_blue_gray200"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="contentIcArrow" />
 
                 </LinearLayout>
 
@@ -196,7 +201,8 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/settings_items_background"
                         android:backgroundTint="#FF9800"
-                        app:tint="@color/white" />
+                        app:tint="@color/white"
+                        android:contentDescription="contentIcBilling" />
 
                     <TextView
                         android:id="@+id/tvBilling"
@@ -205,7 +211,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Billing"
-                        android:textColor="@color/g_gray700"
+                        android:textColor="@color/c_gray700"
                         android:textStyle="bold"
                         android:layout_marginStart="15dp"
                         android:layout_gravity="center_vertical"/>
@@ -214,8 +220,9 @@
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200"
-                        android:layout_gravity="center_vertical"/>
+                        app:tint="@color/c_blue_gray200"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="contentIcArrow" />
 
                 </LinearLayout>
 
@@ -224,7 +231,7 @@
             <TextView
                 android:id="@+id/tvNotifications"
                 style="@style/MediumTextViewThin"
-                android:textColor="@color/g_gray700"
+                android:textColor="@color/c_gray700"
                 android:textStyle="normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -247,7 +254,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    tools:ignore="UselessParent">
 
                     <ImageView
                         android:layout_width="30dp"
@@ -256,7 +264,8 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/settings_items_background"
                         app:tint="@color/white"
-                        android:backgroundTint="#4cd964"/>
+                        android:backgroundTint="#4cd964"
+                        android:contentDescription="contentIcNotification" />
 
                     <TextView
                         style="@style/MediumTextViewThin"
@@ -264,7 +273,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Notifications"
-                        android:textColor="@color/g_gray700"
+                        android:textColor="@color/c_gray700"
                         android:textStyle="bold"
                         android:layout_marginStart="15dp"
                         android:layout_gravity="center_vertical"/>
@@ -284,7 +293,7 @@
             <TextView
                 android:id="@+id/tvRegional"
                 style="@style/MediumTextViewThin"
-                android:textColor="@color/g_gray700"
+                android:textColor="@color/c_gray700"
                 android:textStyle="normal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -310,7 +319,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="10dp"
+                    tools:ignore="UselessParent">
 
                     <ImageView
                         android:layout_width="30dp"
@@ -319,7 +329,8 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/settings_items_background"
                         android:backgroundTint="#ff5823"
-                        app:tint="@color/white" />
+                        app:tint="@color/white"
+                        android:contentDescription="contentIcLogout" />
 
                     <TextView
                         android:id="@+id/logout"
@@ -330,15 +341,16 @@
                         android:layout_marginStart="15dp"
                         android:layout_weight="1"
                         android:text="Logout"
-                        android:textColor="@color/g_gray700"
+                        android:textColor="@color/c_gray700"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200"
-                        android:layout_gravity="center_vertical"/>
+                        app:tint="@color/c_blue_gray200"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="contentIcArrow" />
 
                 </LinearLayout>
 
@@ -351,7 +363,7 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="@font/sf_pro_display"
                 android:text="Version 1.0"
-                android:textColor="@color/g_gray700"
+                android:textColor="@color/c_gray700"
                 android:textSize="11sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"

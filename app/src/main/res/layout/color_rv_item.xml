@@ -17,7 +17,7 @@
         android:id="@+id/imageColor"
         android:layout_width="21dp"
         android:layout_height="21dp"
-        android:src="@color/g_blue"
+        android:src="@color/c_blue"
         app:layout_constraintStart_toStartOf="@id/imageShadow"
         app:layout_constraintTop_toTopOf="@id/imageShadow"
         app:layout_constraintEnd_toEndOf="@id/imageShadow"
@@ -32,6 +32,7 @@
         app:layout_constraintBottom_toBottomOf="@id/imageColor"
         app:layout_constraintEnd_toEndOf="@id/imageColor"
         android:src="@drawable/ic_picked"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:contentDescription="@string/contentimagepicked" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

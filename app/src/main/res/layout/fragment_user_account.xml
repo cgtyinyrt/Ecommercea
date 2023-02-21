@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -30,14 +31,15 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/black" />
+                    app:tint="@color/black"
+                    android:contentDescription="@string/contentimagecloseuseraccount" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:fontFamily="@font/poppins_light"
-                    android:text="My account"
+                    android:text="@string/my_account"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="@id/imageCloseUserAccount"
@@ -88,12 +90,13 @@
             android:background="@drawable/white_background"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
-            android:text="First Name"
+            android:text="@string/first_name"
             android:singleLine="true"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
             app:layout_constraintStart_toStartOf="@+id/leftGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/imageUser" />
+            app:layout_constraintTop_toBottomOf="@+id/imageUser"
+            tools:ignore="Autofill,LabelFor,TextFields" />
 
         <EditText
             android:id="@+id/edLastName"
@@ -103,12 +106,13 @@
             android:background="@drawable/white_background"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
-            android:text="Last Name"
+            android:text="@string/last_name"
             android:singleLine="true"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             app:layout_constraintStart_toStartOf="@id/leftGuideline"
-            app:layout_constraintTop_toBottomOf="@id/edFirstName" />
+            app:layout_constraintTop_toBottomOf="@id/edFirstName"
+            tools:ignore="Autofill,LabelFor,TextFields" />
 
         <EditText
             android:id="@+id/edEmail"
@@ -116,22 +120,22 @@
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/white_background"
-            android:editable="true"
             android:fontFamily="@font/poppins_light"
             android:gravity="center"
-            android:text="Email"
+            android:text="@string/email"
             android:singleLine="true"
-            android:textColor="@color/g_gray700"
+            android:textColor="@color/c_gray700"
             app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             app:layout_constraintStart_toStartOf="@id/leftGuideline"
-            app:layout_constraintTop_toBottomOf="@id/edLastName" />
+            app:layout_constraintTop_toBottomOf="@id/edLastName"
+            tools:ignore="Autofill,LabelFor,TextFields" />
 
         <TextView
             android:id="@+id/tvUpdatePassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Forgot/Change password"
+            android:text="@string/forgot_change_password"
             app:layout_constraintStart_toStartOf="@id/leftGuideline"
             app:layout_constraintTop_toBottomOf="@+id/edEmail" />
 
@@ -141,7 +145,7 @@
             android:layout_height="45dp"
             android:background="@color/maroon_palette"
             android:fontFamily="@font/poppins_light"
-            android:text="Save"
+            android:text="@string/save"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="12sp"

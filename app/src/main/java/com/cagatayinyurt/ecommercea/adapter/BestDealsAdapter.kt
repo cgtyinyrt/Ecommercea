@@ -1,5 +1,6 @@
 package com.cagatayinyurt.ecommercea.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ class BestDealsAdapter : RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHold
     inner class BestDealsViewHolder(
         private val binding: BestDealsRvItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
+            @SuppressLint("SetTextI18n")
             fun bind(product: Product) {
                 binding.apply {
                     Glide.with(itemView).load(product.images[0]).into(imgBestDeal)

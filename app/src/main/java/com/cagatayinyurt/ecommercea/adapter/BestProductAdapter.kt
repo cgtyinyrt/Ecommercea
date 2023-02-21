@@ -1,5 +1,6 @@
 package com.cagatayinyurt.ecommercea.adapter
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,7 @@ class BestProductAdapter :
         private val binding: ProductRvItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(product: Product) {
             binding.apply {
                 val priceAfterOffer = product.offerPercentage.getProductPrice(product.price)

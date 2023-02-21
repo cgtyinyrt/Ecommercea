@@ -28,7 +28,7 @@
         app:elevation="0dp"
         app:itemPaddingTop="10dp"
         app:itemPaddingBottom="10dp"
-        app:itemRippleColor="@color/g_white"
+        app:itemRippleColor="@color/c_white"
         app:itemIconTint="@drawable/bottom_nav_item_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

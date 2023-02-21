@@ -3,13 +3,13 @@
 
     <style name="h4">
         <item name="android:fontFamily">@font/poppins_thin</item>
-        <item name="android:textColor">@color/g_black</item>
+        <item name="android:textColor">@color/c_black</item>
         <item name="android:textSize">@dimen/h4TextSize</item>
     </style>
 
     <style name="h2">
         <item name="android:fontFamily">@font/poppins_light</item>
-        <item name="android:textColor">@color/g_gray700</item>
+        <item name="android:textColor">@color/c_gray700</item>
         <item name="android:textSize">@dimen/h2TextSize</item>
     </style>
 
@@ -77,7 +77,7 @@
     </style>
 
     <style name="SmallTextViewThin">
-    <item name="android:textColor">@color/g_gray700</item>
+    <item name="android:textColor">@color/c_gray700</item>
     <item name="android:textSize">10sp</item>
     <item name="fontFamily">@font/sf_pro_display</item>
     </style>

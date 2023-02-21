@@ -1,5 +1,6 @@
 package com.cagatayinyurt.ecommercea.dialog
 
+import android.annotation.SuppressLint
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import com.cagatayinyurt.ecommercea.R
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
+@SuppressLint("InflateParams")
 fun Fragment.setupBottomSheepDialog(
     onSendClick: (String) -> Unit
 ) {

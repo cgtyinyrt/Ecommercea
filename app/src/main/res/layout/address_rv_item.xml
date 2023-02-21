@@ -10,13 +10,14 @@
         android:background="@drawable/unselected_button_background"
         android:clickable="true"
         android:fontFamily="@font/poppins_thin"
-        android:text="Home"
+        android:text="@string/home"
         android:textAllCaps="false"
-        android:textColor="@color/g_blue_gray200"
+        android:textColor="@color/c_blue_gray200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
