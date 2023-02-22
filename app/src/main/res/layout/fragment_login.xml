@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/kids_palette"
+        android:background="@color/white"
         android:scaleType="centerCrop"
         android:contentDescription="@string/blurrybackdesc" />
 
@@ -120,6 +120,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/facebook"
+            android:textColor="#083DBF"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/imgFacebookLogin"
             app:layout_constraintTop_toTopOf="@id/imgFacebookLogin"
             app:layout_constraintBottom_toBottomOf="@id/imgFacebookLogin"
@@ -139,6 +141,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/google"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/imgGoogleLogin"
             app:layout_constraintTop_toTopOf="@id/imgGoogleLogin"
             app:layout_constraintBottom_toBottomOf="@id/imgGoogleLogin"
@@ -148,13 +152,13 @@
             android:id="@+id/btnInsideLogin"
             android:layout_width="0dp"
             android:layout_height="@dimen/mediumButtonHeight"
-            style="@style/blueButtonStyle"
+            style="@style/redButtonStyle"
             app:layout_constraintTop_toBottomOf="@id/tvForgotPasswordLogin"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
             app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
             android:layout_marginTop="15dp"
             android:text="@string/login"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             app:spinning_bar_color="@color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

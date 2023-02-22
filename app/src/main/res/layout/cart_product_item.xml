@@ -31,7 +31,7 @@
             app:layout_constraintBottom_toTopOf="@id/line"
             app:layout_constraintStart_toStartOf="parent"
             android:scaleType="centerCrop"
-            android:src="@color/kids_palette"
+            android:src="@color/white"
             android:contentDescription="@string/contentimagecartproduct" />
 
         <TextView

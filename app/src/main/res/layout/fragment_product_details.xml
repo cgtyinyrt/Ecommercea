@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/kids_palette">
+        android:background="@color/white">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardProductImages"
@@ -153,7 +153,7 @@
             android:id="@+id/btnAddToCart"
             android:layout_width="0dp"
             android:layout_height="@dimen/mediumButtonHeight"
-            style="@style/blueButtonStyle"
+            style="@style/redButtonStyle"
             app:layout_constraintTop_toBottomOf="@id/linearProductPref"
             app:layout_constraintStart_toStartOf="@id/linearProductPref"
             app:layout_constraintEnd_toEndOf="@id/linearProductPref"

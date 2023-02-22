@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/kids_palette"
+        android:background="@color/white"
         android:scaleType="centerCrop"
         android:contentDescription="@string/blurrybackdesc" />
 
@@ -60,24 +60,25 @@
             android:id="@+id/btnRegisterAccountOptions"
             android:layout_width="@dimen/mediumButtonWidth"
             android:layout_height="@dimen/mediumButtonHeight"
-            style="@style/blueButtonStyle"
+            style="@style/redButtonStyle"
             app:layout_constraintTop_toBottomOf="@id/tvQuality"
             app:layout_constraintStart_toStartOf="@id/tvQuality"
             app:layout_constraintEnd_toEndOf="@id/tvQuality"
             app:layout_constraintBottom_toBottomOf="parent"
             android:text="@string/register"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLoginAccountOptions"
             android:layout_width="@dimen/mediumButtonWidth"
             android:layout_height="@dimen/mediumButtonHeight"
-            style="@style/whiteButtonStyle"
+            style="@style/redButtonStyle"
             app:layout_constraintTop_toBottomOf="@id/btnRegisterAccountOptions"
             app:layout_constraintStart_toStartOf="@id/tvQuality"
             app:layout_constraintEnd_toEndOf="@id/tvQuality"
             android:layout_marginTop="10dp"
-            android:text="@string/login" />
+            android:text="@string/login"
+            android:textColor="@color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

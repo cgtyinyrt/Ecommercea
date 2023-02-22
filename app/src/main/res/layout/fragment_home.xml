@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/kids_palette">
+    android:background="@color/white">
 
     <LinearLayout
         android:id="@+id/llHomeHeader"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
         app:tabIndicator="@null"
-        android:background="@color/kids_palette"/>
+        android:background="@color/white"/>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerHome"

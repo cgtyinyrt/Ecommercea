@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/kids_palette">
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineLeftTexture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.13" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineEllipseLeft"
@@ -48,7 +48,7 @@
         app:layout_constraintEnd_toEndOf="@id/guidelineEllipseRight"
         app:layout_constraintTop_toTopOf="@id/guidelineEllipseTop"
         app:layout_constraintBottom_toBottomOf="@id/guidelineEllipseBottom"
-        android:background="@color/kids_palette"
+        android:background="@color/white"
         app:layout_constraintDimensionRatio="1:1"
         android:contentDescription="@string/ellipsedesc" />
 
@@ -84,12 +84,13 @@
         android:id="@+id/btnStart"
         android:layout_width="@dimen/smallButtonWidth"
         android:layout_height="@dimen/smallButtonHeight"
-        style="@style/blueButtonStyle"
+        style="@style/redButtonStyle"
         app:layout_constraintTop_toBottomOf="@id/tvQuality"
         app:layout_constraintStart_toStartOf="@id/tvQuality"
         app:layout_constraintEnd_toEndOf="@id/tvQuality"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="@string/start"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
