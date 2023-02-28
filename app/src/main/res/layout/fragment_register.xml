@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/h3"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             app:drawableStartCompat="@drawable/ic_ecommercea_shape"
             android:drawablePadding="6dp"
             android:textStyle="bold"
@@ -134,50 +134,6 @@
             android:text="@string/register"
             android:textColor="@color/white"
             app:spinning_bar_color="@color/white"/>
-
-        <ImageView
-            android:id="@+id/imgFacebookLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
-            app:layout_constraintTop_toBottomOf="@id/btnRegister"
-            android:src="@drawable/facebook_login"
-            android:textColor="@color/black"
-            android:contentDescription="@string/facebooklogindesc" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/facebook"
-            android:textColor="#083DBF"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/imgFacebookLogin"
-            app:layout_constraintTop_toTopOf="@id/imgFacebookLogin"
-            app:layout_constraintBottom_toBottomOf="@id/imgFacebookLogin"
-            app:layout_constraintEnd_toEndOf="@id/imgFacebookLogin"/>
-
-        <ImageView
-            android:id="@+id/imgGoogleLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
-            app:layout_constraintTop_toBottomOf="@id/btnRegister"
-            android:src="@drawable/google_login"
-            android:textColor="@color/black"
-            android:contentDescription="@string/googlelogindesc" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/google"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/imgGoogleLogin"
-            app:layout_constraintTop_toTopOf="@id/imgGoogleLogin"
-            app:layout_constraintBottom_toBottomOf="@id/imgGoogleLogin"
-            app:layout_constraintEnd_toEndOf="@id/imgGoogleLogin"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

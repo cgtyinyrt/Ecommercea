@@ -10,8 +10,6 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
-    <string name="facebook">Facebook</string>
-    <string name="google">Google</string>
     <string name="do_you_have_an_account_login">Do you have an account? Login</string>
     <string name="let_s_register">Let\'s Register</string>
     <string name="last_name">Last Name</string>
@@ -37,8 +35,6 @@
     <string name="ellipsedesc">ellipseDesc</string>
     <string name="textureright">textureRight</string>
     <string name="start">Start</string>
-    <string name="facebooklogindesc">facebookLoginDesc</string>
-    <string name="googlelogindesc">googleLoginDesc</string>
     <string name="product_name">Product Name</string>
     <string name="price">Price</string>
     <string name="color">Color</string>
