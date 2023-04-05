@@ -2,6 +2,8 @@
 
 This is a basic mobile E-commerce project for educational purposes and released on Google Play Store
 
+https://play.google.com/store/apps/details?id=com.cagatayinyurt.ecommercea
+
 ### Technologies
 
 - Mvvm
